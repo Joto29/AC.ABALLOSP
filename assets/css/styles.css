@@ -310,4 +310,6 @@
   }
   .footer-brand{ font-weight:800; }
   .footer-small{ color: var(--muted); margin:0; }
-  
+  ol.list{ padding-left: 22px; }
+  ol.list li{ margin: 8px 0; }
+  ol.list strong{ color: var(--text); }
