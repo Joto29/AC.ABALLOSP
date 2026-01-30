@@ -4,6 +4,15 @@ function getBasePath() {
   return window.location.pathname.includes("/pages/") ? ".." : ".";
 }
 
+function setBrandLogo() {
+  const logo = document.querySelector(".brand-logo");
+  if (!logo) return;
+
+  const base = getBasePath();
+  logo.src = `${base}/assets/img/brand/B96D004D-B28A-4A8D-B88E-5077FE04EF08_1_105_c.jpeg`;
+}
+
+
 function resolveNavLinks() {
   const base = getBasePath();
 
@@ -86,6 +95,7 @@ async function init() {
   setActiveNav();
   setupMobileNav();
   setYear();
+  setBrandLogo();
 }
 
 init();
