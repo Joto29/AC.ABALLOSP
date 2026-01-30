@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto | Ac.aballo</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark">AC</span>
+          <span class="brand-name">Ac.aballo</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="about.html">Quiénes somos</a>
+          <a href="programs.html">Programas</a>
+          <a href="founders.html">Fundadores</a>
+          <a href="contact.html" aria-current="page">Contacto</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <h1>Contacto y agenda</h1>
+        <p class="lead">Cuéntanos quién eres y te ayudamos a elegir el programa ideal.</p>
+
+        <div class="card">
+          <form class="form" action="#" method="post">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="field">
+              <label for="interest">¿Qué buscas?</label>
+              <select id="interest" name="interest" required>
+                <option value="" selected disabled>Selecciona una opción</option>
+                <option>Clases regulares</option>
+                <option>Horsemanship / Doma racional</option>
+                <option>Interacción con caballos (sin montar)</option>
+                <option>Condición especial</option>
+                <option>Cabalgatas</option>
+                <option>Eventos</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" placeholder="Edad, experiencia, objetivo, horarios..."></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Enviar</button>
+
+            <p class="subtle">
+              Nota: Este formulario es temporal. Luego lo conectamos a email/WhatsApp/Google Forms según requiera la escuela.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-brand">Ac.aballo</p>
+        <p class="footer-small">© <span id="year"></span></p>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
