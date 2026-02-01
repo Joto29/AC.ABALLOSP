@@ -1,5 +1,6 @@
 /* ========== Base ========== */
 :root{
+  /* Palette */
   --bg: #f4e8d4;
   --text: #111111;
   --muted: #5b5b5b;
@@ -12,7 +13,8 @@
   --accent-2: #8a6d3b;   /* tierra */
   --accent-soft: rgba(47,95,78,.10);
 
-  --nav-bg: #1f3d2f;     /* verde oscuro navbar */
+  /* Navbar */
+  --nav-bg: #1f3d2f;     /* verde oscuro */
   --nav-text: #fdfcf8;
   --nav-muted: rgba(253,252,248,.78);
   --nav-line: rgba(253,252,248,.14);
@@ -21,11 +23,10 @@
   --container: 1100px;
 
   /* Typography */
-  --font-heading: "Playfair Display", serif;
-  --font-body: "Google Sans", "Roboto", system-ui, -apple-system, sans-serif;
+  --font-heading: "Abril Fatface", serif;
+  --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
   --font-mono: "Space Mono", monospace;
 }
-
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
@@ -33,7 +34,7 @@ html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family: var(--font-body);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text);
   background: var(--bg);
 }
@@ -50,27 +51,25 @@ h1, h2, h3{
 
 h1{
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 3.2vw, 3.1rem);
-  font-weight: 600;
-  letter-spacing: .2px;
-  margin-bottom: 16px;
+  font-size: clamp(2.4rem, 3.6vw, 3.3rem);
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin-bottom: 18px;
 }
 
 h2{
   font-family: var(--font-heading);
-  font-size: clamp(1.45rem, 2.3vw, 2.05rem);
-  font-weight: 600;
-  letter-spacing: .15px;
-  margin-bottom: 12px;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: .4px;
+  margin-bottom: 14px;
 }
-
 
 h3{
   font-family: var(--font-body);
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 800;
 }
-
 
 .container{
   width:min(var(--container), calc(100% - 32px));
@@ -98,46 +97,55 @@ h3{
 .brand{
   display:flex;
   align-items:center;
-  gap:10px;
-  font-weight:700;
+  gap:12px;
+  font-weight:800;
 }
 
 .brand-name{
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: .25px;
+  font-weight: 400;
+  letter-spacing: .35px;
+  color: var(--text);
 }
-
 
 .brand-logo{
   height: 38px;
   width: auto;
   display: block;
+  border-radius: 100%;
 }
 
 .site-nav{
   display:flex;
-  gap:16px;
+  gap:12px;
   align-items:center;
-  font-weight:600;
-  color: var(--muted);
+  font-weight: 800;
+  color: var(--text);
 }
 
 .site-nav a{
   padding:8px 10px;
-  border-radius: 10px;
+  border-radius: 12px;
+  color: var(--text);
+  opacity: 1;
+  transition: background .12s ease, transform .10s ease;
+}
+
+.site-nav a:hover{
+  background: rgba(47,95,78,.10);
+  transform: translateY(-1px);
 }
 
 .site-nav a[aria-current="page"]{
-  color: var(--text);
-  background: var(--accent-soft);
+  background: rgba(47,95,78,.14);
 }
 
 .nav-toggle{
   display:none;
   border: 1px solid var(--line);
-  background:#fff;
+  background: #fff;
+  color: var(--text);
   border-radius:12px;
   padding:8px 10px;
   font-size:1.05rem;
@@ -166,7 +174,19 @@ h3{
   }
 
   .site-nav.is-open{ display:flex; }
-  .site-nav a{ color: var(--text); }
+
+  .site-nav a{
+    color: var(--text);
+  }
+
+  .site-nav a:hover{
+    background: rgba(47,95,78,.10);
+    transform: none;
+  }
+
+  .site-nav a[aria-current="page"]{
+    background: rgba(47,95,78,.14);
+  }
 }
 
 /* ========== Hero ========== */
@@ -184,11 +204,11 @@ h3{
 }
 
 .kicker{
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   color: var(--accent-2);
-  font-weight:700;
-  letter-spacing:.3px;
-  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: .3px;
+  font-size: .92rem;
 }
 
 .lead{
@@ -198,9 +218,9 @@ h3{
 }
 
 .micro{
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   color: var(--muted);
-  font-size: .9rem;
+  font-size: .92rem;
   letter-spacing: .2px;
 }
 
@@ -237,9 +257,9 @@ h3{
 
 .subtle{
   color: var(--muted);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   letter-spacing: .2px;
-  font-size: .9rem;
+  font-size: .92rem;
 }
 
 /* ========== Buttons ========== */
@@ -254,13 +274,13 @@ h3{
   border:1px solid var(--line);
   background:#fff;
 
-  font-weight:800;
+  font-weight: 900;
   color: var(--text);
   cursor:pointer;
 
   box-shadow: 0 10px 18px rgba(0,0,0,.08);
   transform: translateY(0);
-  transition: transform .10s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+  transition: transform .10s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease, filter .12s ease;
 }
 
 .btn:hover{
@@ -293,6 +313,12 @@ h3{
   filter: brightness(.97);
 }
 
+.cta-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 10px;
+}
 
 /* ========== Grid / Tiles / Pills ========== */
 .grid{
@@ -341,7 +367,7 @@ h3{
   border-radius: 999px;
   background: var(--accent-soft);
   border:1px solid rgba(47,95,78,.18);
-  font-weight:700;
+  font-weight:800;
   color: var(--accent);
 }
 
@@ -380,7 +406,7 @@ ol.list strong{ color: var(--text); }
 
 .field label{
   display:block;
-  font-weight:700;
+  font-weight:900;
   margin-bottom: 6px;
 }
 
@@ -424,29 +450,35 @@ ol.list strong{ color: var(--text); }
 .footer-small{
   color: var(--muted);
   margin:0;
-  font-family: var(--font-mono);
-  font-size: .85rem;
+  font-family: var(--font-body);
+  font-size: .90rem;
 }
 
 /* ========== Media classes (images in pages) ========== */
 .founder-image{
-  width:100%;
+  width: 100%;
   max-width: 460px;
-  margin:14px 0;
-  border-radius:18px;
+  height: 460px;               /* 🔑 mismo alto */
+  margin: 14px 0;
+
+  border-radius: 18px;
   border: 1px solid var(--line);
+
+  object-fit: cover;           /* 🔑 recorta sin deformar */
+  object-position: center;     /* centra el rostro */
 }
+
 
 .program-image,
 .about-image{
-    width:100%;
-    max-width: 250px;
-    margin:10px 0 14px;
-    border-radius:14px;
-    border: 1px solid var(--line);
+  width:100%;
+  max-width: 250px;
+  margin:10px 0 14px;
+  border-radius:14px;
+  border: 1px solid var(--line);
 }
 
-/* ========== Gallery (Solution 3) ========== */
+/* ========== Gallery ========== */
 .gallery-grid{
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }

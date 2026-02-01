@@ -1,7 +1,15 @@
 // ========== Utilidades ==========
 function getBasePath() {
-  // Si estás en /pages/ => sube un nivel. Si estás en raíz => queda igual.
-  return window.location.pathname.includes("/pages/") ? ".." : ".";
+  const path = window.location.pathname;
+
+  // /pages/experiences/... => necesitas subir 2 niveles
+  if (path.includes("/pages/experiences/")) return "../..";
+
+  // /pages/... => sube 1 nivel
+  if (path.includes("/pages/")) return "..";
+
+  // raíz
+  return ".";
 }
 
 function setBrandLogo() {
