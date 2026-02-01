@@ -1,18 +1,23 @@
 /* ========== Base ========== */
 :root{
-  --bg: #ffffff;
+  --bg: #f4e8d4;
   --text: #111111;
   --muted: #5b5b5b;
   --line: #e7e7e7;
 
-  --card: #fbfbfb;
+  --card: #fdfcf8;
   --shadow: 0 10px 30px rgba(0,0,0,.06);
 
   --accent: #2f5f4e;     /* verde oliva */
   --accent-2: #8a6d3b;   /* tierra */
   --accent-soft: rgba(47,95,78,.10);
-  --radius: 16px;
 
+  --nav-bg: #1f3d2f;     /* verde oscuro navbar */
+  --nav-text: #fdfcf8;
+  --nav-muted: rgba(253,252,248,.78);
+  --nav-line: rgba(253,252,248,.14);
+
+  --radius: 16px;
   --container: 1100px;
 
   /* Typography */
@@ -20,6 +25,7 @@
   --font-body: "Google Sans", "Roboto", system-ui, -apple-system, sans-serif;
   --font-mono: "Space Mono", monospace;
 }
+
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
@@ -242,17 +248,36 @@ h3{
   align-items:center;
   justify-content:center;
   gap:8px;
+
   border-radius: 999px;
-  padding: 10px 14px;
+  padding: 11px 16px;
   border:1px solid var(--line);
   background:#fff;
-  font-weight:700;
+
+  font-weight:800;
   color: var(--text);
   cursor:pointer;
-  transition: transform .05s ease;
+
+  box-shadow: 0 10px 18px rgba(0,0,0,.08);
+  transform: translateY(0);
+  transition: transform .10s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
 }
 
-.btn:active{ transform: translateY(1px); }
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(0,0,0,.12);
+  border-color: rgba(0,0,0,.12);
+}
+
+.btn:active{
+  transform: translateY(1px) scale(.99);
+  box-shadow: 0 6px 12px rgba(0,0,0,.10);
+}
+
+.btn:focus-visible{
+  outline: 3px solid rgba(47,95,78,.35);
+  outline-offset: 3px;
+}
 
 .btn.primary{
   background: var(--accent);
@@ -260,12 +285,14 @@ h3{
   color:#fff;
 }
 
-.cta-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top: 10px;
+.btn.primary:hover{
+  filter: brightness(1.03);
 }
+
+.btn.primary:active{
+  filter: brightness(.97);
+}
+
 
 /* ========== Grid / Tiles / Pills ========== */
 .grid{
